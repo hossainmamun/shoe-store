@@ -17,7 +17,9 @@ const Cart = () => {
    const getCartProduct = async () => {
       setIsLoading(true);
       try {
-         const products = await axios.get('http://localhost:2000/api/cart/');
+         const products = await axios.get(
+            'https://shoe-store-api-ghgy.onrender.com/api/cart/'
+         );
          if (products.status === 200) {
             const filterProduct = products.data.filter(
                (item) => item.userEmail === user?.userEmail
@@ -62,7 +64,7 @@ const Cart = () => {
    const handleDeleteCart = async (id) => {
       try {
          const product = await axios.delete(
-            `http://localhost:2000/api/cart/${id}`
+            `https://shoe-store-api-ghgy.onrender.com/api/cart/${id}`
          );
          if (product.status === 200) {
             swal({

@@ -13,7 +13,9 @@ const ProductList = () => {
    // load all products
    const allProducts = async () => {
       try {
-         const products = await axios.get('http://localhost:2000/api/products');
+         const products = await axios.get(
+            'https://shoe-store-api-ghgy.onrender.com/api/products'
+         );
          if (products.status === 200) {
             setProductList(products.data);
          }
@@ -44,7 +46,7 @@ const ProductList = () => {
    const handleProductDelete = async () => {
       try {
          const deleteItem = await axios.delete(
-            `http://localhost:2000/api/products/${selectedItem}`
+            `https://shoe-store-api-ghgy.onrender.com/api/products/${selectedItem}`
          );
          if (deleteItem.status === 200) {
             setIsConfirmOpen(false);

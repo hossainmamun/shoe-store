@@ -20,7 +20,7 @@ const EditProduct = () => {
 
       try {
          const response = await axios.get(
-            `http://localhost:2000/api/products/${productId}`
+            `https://shoe-store-api-ghgy.onrender.com/api/products/${productId}`
          );
          if (response.status === 200) {
             setProduct(response.data);
@@ -80,7 +80,7 @@ const EditProduct = () => {
 
       try {
          const response = await axios.patch(
-            `http://localhost:2000/api/products/${productId}`,
+            `https://shoe-store-api-ghgy.onrender.com/api/products/${productId}`,
             {
                product_image: imgUrl ? imgUrl : product.product_image,
                product_title: product.product_title,

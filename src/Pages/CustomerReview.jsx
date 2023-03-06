@@ -22,12 +22,15 @@ const CustomerReview = ({ productId }) => {
       const { rating, comment } = data;
 
       try {
-         const review = await axios.post('http://localhost:2000/api/review', {
-            user_name,
-            rating,
-            comment,
-            productId,
-         });
+         const review = await axios.post(
+            'https://shoe-store-api-ghgy.onrender.com/api/review',
+            {
+               user_name,
+               rating,
+               comment,
+               productId,
+            }
+         );
          if (review.status === 201) {
             swal({
                text: 'Thanks for your valuable review',
@@ -50,7 +53,7 @@ const CustomerReview = ({ productId }) => {
       setIsLoading(true);
       try {
          const review = await axios.get(
-            `http://localhost:2000/api/review/${productId}`
+            `https://shoe-store-api-ghgy.onrender.com/api/review/${productId}`
          );
          if (review.status === 200) {
             setReviewList(review.data);
@@ -144,7 +147,7 @@ const CustomerReview = ({ productId }) => {
                ) : (
                   <div>
                      {reviewList.map((item) => {
-                        const { _id, user_name,rating, comment } = item;
+                        const { _id, user_name, rating, comment } = item;
                         return (
                            <div
                               key={_id}

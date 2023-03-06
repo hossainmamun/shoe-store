@@ -23,7 +23,7 @@ const Login = () => {
       setIsLoading(true);
       try {
          const login = await axios.post(
-            'http://localhost:2000/api/user/login',
+            'https://shoe-store-api-ghgy.onrender.com/api/user/login',
             {
                email,
                password,

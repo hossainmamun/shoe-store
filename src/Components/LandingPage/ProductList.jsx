@@ -11,7 +11,9 @@ const ProductList = () => {
    // load all products
    const allProducts = async () => {
       try {
-         const products = await axios.get('http://localhost:2000/api/products');
+         const products = await axios.get(
+            'https://shoe-store-api-ghgy.onrender.com/api/products'
+         );
          if (products.status === 200) {
             setProductList(products.data);
          }

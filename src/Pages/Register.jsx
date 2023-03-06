@@ -23,7 +23,7 @@ const Register = () => {
       setIsLoading(true);
       try {
          const register = await axios.post(
-            'http://localhost:2000/api/user/register',
+            'https://shoe-store-api-ghgy.onrender.com/api/user/register',
             {
                user_name,
                mobile,
@@ -54,7 +54,7 @@ const Register = () => {
             button: 'Ok',
          });
          setIsLoading(false);
-         console.log(error)
+         console.log(error);
       }
    };
 

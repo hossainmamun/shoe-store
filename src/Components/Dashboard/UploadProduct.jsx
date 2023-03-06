@@ -59,7 +59,7 @@ const UploadProduct = () => {
       setSuccess(false);
       try {
          const product = await axios.post(
-            'http://localhost:2000/api/products',
+            'https://shoe-store-api-ghgy.onrender.com/api/products',
             {
                product_image: imgUrl,
                product_title,

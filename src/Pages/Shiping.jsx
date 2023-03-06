@@ -9,7 +9,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
 const Shiping = () => {
-   const [cartProduct, setCartProduct] = useContext(cartProductContext);
+   const [cartProduct] = useContext(cartProductContext);
    const { user } = useContext(authContext);
    const navigate = useNavigate();
    const shippingInfo = {
@@ -43,7 +43,7 @@ const Shiping = () => {
    const handlePlaceOrder = async (email) => {
       try {
          const order = await axios.delete(
-            `http://localhost:2000/api/cart/order/${email}`
+            `https://shoe-store-api-ghgy.onrender.com/api/cart/order/${email}`
          );
          if (order.status === 200) {
             swal({

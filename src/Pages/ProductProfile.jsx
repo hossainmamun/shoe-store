@@ -21,7 +21,7 @@ const ProductProfile = () => {
 
       try {
          const response = await axios.get(
-            `http://localhost:2000/api/products/${productId}`
+            `https://shoe-store-api-ghgy.onrender.com/api/products/${productId}`
          );
          if (response.status === 200) {
             setProduct(response.data);
@@ -46,7 +46,7 @@ const ProductProfile = () => {
       const { product_detail, product_image, product_title, product_price } =
          product;
       try {
-         await axios.post('http://localhost:2000/api/cart', {
+         await axios.post('https://shoe-store-api-ghgy.onrender.com/api/cart', {
             product_title,
             product_image,
             product_price,
